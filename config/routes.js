@@ -42,7 +42,13 @@ module.exports.routes = {
 
   'GET /signup': {view: 'signup'},
 
-  'POST /signup': 'UserController.signup'
+  'POST /signup': 'UserController.signup',
+
+  'POST /post': 'PostController.create',
+
+  'GET /post/:id?': 'PostController.find',
+  'PUT /post/:id?': 'PostController.update',
+  'DELETE /post/:id?': 'PostController.destroy',
 
   // '/': {
   //   view: 'homepage'
