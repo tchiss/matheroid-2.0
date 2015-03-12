@@ -50,6 +50,12 @@ module.exports.routes = {
   'PUT /post/:id?': 'PostController.update',
   'DELETE /post/:id?': 'PostController.destroy',
 
+  'POST /subject': 'SubjectController.create',
+
+  'GET /subject/:id?': 'SubjectController.find',
+  'PUT /subject/:id?': 'SubjectController.update',
+  'DELETE /subject/:id?': 'SubjectController.destroy',
+
   // '/': {
   //   view: 'homepage'
   // }

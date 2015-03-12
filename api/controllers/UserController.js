@@ -67,5 +67,44 @@ module.exports = {
         });
       }
     });
+  },
+  login: function(req, res, next){
+
+  },
+
+  connectTwitter: function(req, res, next){
+    var Twitter = require('machinepack-twitter');
+    Twitter.getLoginUrl({
+      consumerKey: '',
+      consumerSecret: '',
+      callbackUrl: '',
+    }).exec({
+    // An unexpected error occurred.
+      error: function (err){
+       return next(err);
+      },
+      // OK.
+      success: function (result){
+       
+      },
+    });
+  },
+
+  connectFacebook: function(req, res, next){
+    var Facebook = require('machinepack-facebook');
+    Facebook.getLoginUrl({
+      appId: '',
+      callbackUrl: '',
+      permissions: ['']
+    }).exec({
+    // An unexpected error occurred.
+      error: function (err){
+       return next(err);
+      },
+      // OK.
+      success: function (result){
+       
+      },
+    });
   }
 };
