@@ -6,7 +6,7 @@
 */
 
 module.exports = {
-
+  identity: 'User',
   attributes: {
 
     // The user's full name

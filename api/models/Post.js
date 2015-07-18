@@ -8,11 +8,13 @@
 var User = require('./User');
 
 module.exports = {
-
+	
   attributes: {
   	title: String,
   	content: String,
-  	author: User
+  	author: {
+  		model: 'user'
+  	}
   }
 };
 

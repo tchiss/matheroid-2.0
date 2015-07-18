@@ -6,9 +6,10 @@
 */
 
 module.exports = {
-
+  identity: 'Subject',
   attributes: {
   	title: String,
-  }
+  },
+  workshop: { model: 'workshop' }
 };
 

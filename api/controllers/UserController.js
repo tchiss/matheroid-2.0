@@ -8,6 +8,38 @@
 module.exports = {
 
   /**
+   * Sign in for a user account.
+   */
+
+   login: function(req, res) {
+
+    User.findOne({
+      email: req.param('email')
+    }, function foundUser(err, user){
+      if (err) return res.negotiate(err);
+      if(!user) return res.notFound();
+
+      require('machinepack-passwords').checkPassword({
+        passwordAttempt : req.param('password'),
+        encryptedPassword: user.encryptedPassword
+      }).exec({
+        error: function(err) {
+          return res.negotiate(err);
+        },
+
+        incorrect: function(err) {
+          return res.notFound();
+        },
+
+        success: function() {
+          req.session.me = user.id;
+          return res.ok();
+        }
+      });
+    });
+   },
+
+  /**
    * Sign up for a user account.
    */
   signup: function(req, res) {
@@ -67,9 +99,6 @@ module.exports = {
         });
       }
     });
-  },
-  login: function(req, res, next){
-
   },
 
   connectTwitter: function(req, res, next){
