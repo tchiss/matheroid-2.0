@@ -36,26 +36,17 @@ module.exports.routes = {
   // Server-rendered HTML webpages
   ////////////////////////////////////////////////////////////
 
-    'GET /': {
-    view: 'homepage'
-  },
-
   'GET /signup': {view: 'signup'},
+  'GET /': 'PageController.showHomePage',
 
-  'POST /signup?': 'UserController.signup',
+  ////////////////////////////////////////////////////////////
+  // JSON API
+  ////////////////////////////////////////////////////////////
+
+  // User enrollment + authentication
+  'POST /signup': 'UserController.signup',
   'PUT /login': 'UserController.login',
-
-  'POST /post': 'PostController.create',
-
-  'GET /post/:id?': 'PostController.find',
-  'PUT /post/:id?': 'PostController.update',
-  'DELETE /post/:id?': 'PostController.destroy',
-
-  'POST /subject': 'SubjectController.create',
-
-  'GET /subject/:id?': 'SubjectController.find',
-  'PUT /subject/:id?': 'SubjectController.update',
-  'DELETE /subject/:id?': 'SubjectController.destroy',
+  'GET /logout': 'UserController.logout'
 
   // '/': {
   //   view: 'homepage'

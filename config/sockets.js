@@ -50,13 +50,7 @@ module.exports.sockets = {
   // db: 'sails',
   // pass: '<redis auth password>'
 
-  host: 'soapfish.redistogo.com',
-   port: 9131,
-   user: 'redistogo',
-  // ttl: <redis session TTL in seconds>,
-  // db: 0,
-   pass: 'a36e7be130ecd269bed7d326bea2a932',
-  // prefix: 'sess:'
+
 
  /***************************************************************************
   *                                                                          *
@@ -112,12 +106,12 @@ module.exports.sockets = {
   * app's security.                                                          *
   *                                                                          *
   ***************************************************************************/
-  beforeConnect: function(handshake, cb) {
-    // `true` allows the connection
-    return cb(null, true);
-  
-    // (`false` would reject the connection)
-  },
+  // beforeConnect: function(handshake, cb) {
+  //   // `true` allows the connection
+  //   return cb(null, true);
+  //
+  //   // (`false` would reject the connection)
+  // },
 
 
   /***************************************************************************
@@ -126,10 +120,10 @@ module.exports.sockets = {
   * disconnects                                                              *
   *                                                                          *
   ***************************************************************************/
-  afterDisconnect: function(session, socket, cb) {
-    // By default: do nothing.
-    return cb();
-  },
+  // afterDisconnect: function(session, socket, cb) {
+  //   // By default: do nothing.
+  //   return cb();
+  // },
 
 
 

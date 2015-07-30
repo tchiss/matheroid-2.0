@@ -51,7 +51,7 @@ module.exports.session = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  //redis://redistogo:a36e7be130ecd269bed7d326bea2a932@soapfish.redistogo.com:9131/
+
    host: 'soapfish.redistogo.com',
    port: 9131,
    user: 'redistogo',

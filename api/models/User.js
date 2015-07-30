@@ -6,7 +6,7 @@
 */
 
 module.exports = {
-  identity: 'User',
+
   attributes: {
 
     // The user's full name
@@ -25,8 +25,7 @@ module.exports = {
     // The user's email address
     // e.g. nikola@tesla.com
     email: {
-      type: 'string',
-      email: true,
+      type: 'email',
       required: true,
       unique: true
     },
