@@ -90,6 +90,26 @@ module.exports = {
             });
           }
         });
+      require('machinepack-mailgun').sendHtmlEmail({
+        apiKey: 'key-557355cb96bbb5c459659ff95d7b40d1',
+        domain: 'sandboxd834165603b24e06b285a2c300a4c9ed.mailgun.org',
+        toEmail: req.param('email'),
+        toName:  req.param('name'),
+        subject: 'Welcome,' + req.param('name'),
+        textMessage: 'Jane,\nThanks for joining Matheroïd community. If you have any questions, please don\'t hesitate to send them our way. Feel free to reply to this email directly.\n\nSincerely,\nThe Management',
+        htmlMessage: 'Jane,\nThanks for joining Matheroïd community. If you have any questions, please don\'t hesitate to send them our way. Feel free to reply to this email directly.\n\nSincerely,\nThe Management',
+        fromEmail: 'alainwilfrid@yahoo.com',
+        fromName: 'Kalel Wilfrid',
+        }).exec({
+        // An unexpected error occurred.
+          error: function (err){
+           
+          },
+          // OK.
+          success: function (){
+           
+          },
+        });
       }
     });
   },

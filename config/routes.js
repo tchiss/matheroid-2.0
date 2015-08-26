@@ -56,7 +56,10 @@ module.exports.routes = {
   // '/': {
   //   view: 'homepage'
   // }
-
+  'POST /comments': 'CommentController.create',
+  'GET /comment/:id?': 'CommentController.find',
+  'PUT /comment/:id?': 'CommentController.update',
+  'DELETE /comment/:id?': 'CommentController.destroy',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
