@@ -46,7 +46,12 @@ module.exports.routes = {
   // User enrollment + authentication
   'POST /signup': 'UserController.signup',
   'PUT /login': 'UserController.login',
-  'GET /logout': 'UserController.logout'
+  'GET /logout': 'UserController.logout',
+
+  'POST /post': 'PostController.create',
+  'GET /post/:id?': 'PostController.find',
+  'PUT /post/:id?': 'PostController.update',
+  'DELETE /post/:id?': 'PostController.destroy',
 
   // '/': {
   //   view: 'homepage'

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sign Up for Activity Overlord (angular)</title>
+   <title>Matheroïd API</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -36,7 +36,7 @@
           </button>
 
           <!-- This is the brand on the left-hand side. -->
-          <a class="navbar-brand" href="/#"> activityOverlordv2.0</a>
+          <a class="navbar-brand" href="/"> Matheroïd</a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 
           <!-- LOGIN FORM -->  
@@ -80,7 +80,7 @@
           <label>Your full name</label>
 
           <!-- For this input field make it required, and have a max length of 25 -->
-          <input type="text" class="form-control" placeholder="e.g. Nikola Tesla" name="name" ng-model="signupForm.name" ng-maxlength="50" required>
+          <input type="text" class="form-control" placeholder="e.g. Nestor Alain" name="name" ng-model="signupForm.name" ng-maxlength="50" required>
 
           <!-- Also, if signup.name.$dirty is true, show the message depending upon the particular properties truthiness (e.g. required
           and/or maxlength) -->
@@ -96,7 +96,7 @@
           ng-class="{'has-error':signup.title.$invalid &&
                                 signup.title.$dirty}">
           <label>Your title</label>
-          <input type="text" class="form-control" placeholder="e.g. Genius" name="title" ng-model="signupForm.title" ng-maxlength="50" required>
+          <input type="text" class="form-control" placeholder="e.g. Developer" name="title" ng-model="signupForm.title" ng-maxlength="50" required>
           <span class="help-block has-error" ng-if="signup.title.$dirty">
             <span ng-show="signup.title.$error.required">Title is required.</span>
             <span ng-show="signup.title.$error.maxlength">The name cannot be more than 50 characters.</span>
@@ -109,7 +109,7 @@
         ng-class="{'has-error':signup.email.$invalid &&
                               signup.email.$dirty}">
           <label>Your email address</label>
-          <input type="email" class="form-control" placeholder="nikola@tesla.com" name="email" ng-model="signupForm.email" required >
+          <input type="email" class="form-control" placeholder="nestoralain@yahoo.com" name="email" ng-model="signupForm.email" required >
           <span class="help-block has-error" ng-if="signup.email.$dirty">
             <span ng-show="signup.email.$error.required">Email address is required.</span>
             <span ng-show="signup.email.$error.email">Not a valid email address.</span>
@@ -160,8 +160,7 @@
         <hr>
         <footer class="footer pull-right">
             <div>
-                <a href="http://sailsjs.com/">sailsjs.org</a>
-                <div>tutorial by irl nathan, with a bunch of help from cody, gabe, heather, mike, racheal, scott and zoli</div>
+                <a href="https://matheroid-2.herokuapp.com/">Matheroïd Deploy</a>
             </div>
         </footer>
     </div>
