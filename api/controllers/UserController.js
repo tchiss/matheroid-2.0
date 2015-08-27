@@ -96,14 +96,15 @@ module.exports = {
         toEmail: req.param('email'),
         toName:  req.param('name'),
         subject: 'Welcome,' + req.param('name'),
-        textMessage: 'Jane,\nThanks for joining Matheroïd community. If you have any questions, please don\'t hesitate to send them our way. Feel free to reply to this email directly.\n\nSincerely,\nThe Management',
-        htmlMessage: 'Jane,\nThanks for joining Matheroïd community. If you have any questions, please don\'t hesitate to send them our way. Feel free to reply to this email directly.\n\nSincerely,\nThe Management',
-        fromEmail: 'alainwilfrid@yahoo.com',
-        fromName: 'Kalel Wilfrid',
+        textMessage: req.param('name') + ', \nThanks for joining Matheroïd community. If you have any questions, please don\'t hesitate to send them our way. Feel free to reply to this email directly.\n\nSincerely,\nThe Management',
+        htmlMessage: req.param('name') + ', \nThanks for joining Matheroïd community. If you have any questions, please don\'t hesitate to send them our way. Feel free to reply to this email directly.\n\nSincerely,\nThe Management',
+        fromEmail: 'postmaster@sandboxd834165603b24e06b285a2c300a4c9ed.mailgun.org',
+        fromName: 'Matheroïd | Your new account',
         }).exec({
         // An unexpected error occurred.
           error: function (err){
-           
+            console.log(res.negotiate(err));
+            return res.negotiate(err);
           },
           // OK.
           success: function (){
@@ -128,6 +129,15 @@ module.exports = {
 
       return res.backToHomePage();
 
+    });
+  },
+
+  // forgot Password
+  create: function(req, res, next){
+    if(!req.body.email) return res.badRequest({email: 'required'});
+    User.findOneByEmail(req.body.email, function(err, user){
+      return res.negotiate(err);
+      if(!user) res.badRequest({user: 'User not found'});
     });
   }
 };
